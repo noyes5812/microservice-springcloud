@@ -4,6 +4,7 @@ server:
 spring:
   application:
     name: microservice-zull
+
 eureka:
   client:
     service-url:
@@ -13,9 +14,11 @@ eureka:
     prefer-ip-address: true                                   #访问路径可以显示IP地址
 
 zuul:
+  prefix: /MyDemo                                             #设置访问前缀
+  ignored-services: microservicecloud-provider                #忽略带真实服务名的请求
   routes:
-    mydept.serviceId: microservicecloud-provider
-    mydept.path: /provider/**
+    mydept.serviceId: microservicecloud-provider              #服务名
+    mydept.path: /provider/**                                 #服务指定一个代号别名
 
 info:
   app.name: microservice-zull

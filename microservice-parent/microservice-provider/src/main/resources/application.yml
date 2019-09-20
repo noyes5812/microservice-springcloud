@@ -6,8 +6,6 @@ mybatis:
   mapper-locations:
     - "classpath:mybatis/mapper/**/*.xml"                     # mapper映射文件
   type-aliases-package: com.lzj.springcloud.entity            # 别名类所在包
-
-
 spring:
   application:
     name: microservicecloud-provider                          #微服务的名字
