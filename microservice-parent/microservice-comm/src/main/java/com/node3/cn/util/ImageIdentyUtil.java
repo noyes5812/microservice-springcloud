@@ -3,7 +3,6 @@ package com.node3.cn.util;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 
 
 import java.io.IOException;
@@ -11,7 +10,7 @@ import java.util.*;
 
 public class ImageIdentyUtil {
 
-    private static final Logger LOGGER = Logger.getLogger(ImageIdentyUtil.class);
+    //private static final Logger LOGGER = Logger.getLogger(ImageIdentyUtil.class);
 
 
     public static List<Map<String, String>> getSougoIdenty(byte[]fileBytes, String imageUrl) throws IOException {
@@ -40,7 +39,7 @@ public class ImageIdentyUtil {
                     }
                 }
             } catch (Exception e) {
-                LOGGER.info("识别图片失败,请检查图片是否能访问到, imageUrl:" + imageUrl);
+                //LOGGER.info("识别图片失败,请检查图片是否能访问到, imageUrl:" + imageUrl);
             }
         }
         return list;
@@ -76,7 +75,7 @@ public class ImageIdentyUtil {
         params.put("sign", sign);
 
         Map<String, String> result = HttpClientRequest.doPost(url, params);
-        LOGGER.info("请求花草识别：" + result);
+      //  LOGGER.info("请求花草识别：" + result);
         return result.get("responseStr");
     }
 }

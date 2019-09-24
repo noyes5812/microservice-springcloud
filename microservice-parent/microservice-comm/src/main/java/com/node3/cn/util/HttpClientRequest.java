@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.logging.Logger;
 import java.util.zip.Adler32;
 
 import javax.net.ssl.SSLContext;
@@ -49,11 +50,10 @@ import org.apache.http.params.CoreConnectionPNames;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.ssl.TrustStrategy;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
 
 
 public class HttpClientRequest {
-		private static final Logger logger = Logger.getLogger(HttpClientRequest.class);
+		private static final Logger logger = Logger.getLogger(HttpClientRequest.class.getName());
 	/**
 	 * 返回json
 	 * @param url
@@ -214,7 +214,7 @@ public class HttpClientRequest {
 	           logger.info("httpPostWithJson返回的结果="+resultStr);
 	            //打印返回信息
 	            if(statusCode != HttpStatus.SC_OK){
-	            	logger.error("httpPostWithJson请求出错: "+statusCode);
+	            	//logger.error("httpPostWithJson请求出错: "+statusCode);
 	                isSuccess = false;
 	            }else{
 	                  isSuccess = true; 
@@ -305,7 +305,7 @@ public class HttpClientRequest {
 	    	            data = EntityUtils.toString(entity); 
 	    	            return data;  
 	    	       } catch (Exception e) {  
-	    	    	   logger.error("HttpUtilsError"+e);  
+	    	    	   //logger.error("HttpUtilsError"+e);
 	    	        }   
 	    	        return "";  
 	    	    }  
@@ -324,11 +324,11 @@ public class HttpClientRequest {
 	    	            SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslContext);  
 	    	           return HttpClients.custom().setSSLSocketFactory(sslsf).build();  
 	    	        } catch (KeyManagementException e) {  
-	    	        	logger.error("SSLUtilsErrorKetManage"+e);  
+	    	        	//logger.error("SSLUtilsErrorKetManage"+e);
 	    	        } catch (NoSuchAlgorithmException e) {  
-	    	        	logger.error("SSLUtilsErrorNOAlgorithm"+e);  
+	    	        	//logger.error("SSLUtilsErrorNOAlgorithm"+e);
 	    	        } catch (KeyStoreException e) {  
-	    	        	logger.error("SSLUtilsErrorKeyStore"+e);  
+	    	        	//logger.error("SSLUtilsErrorKeyStore"+e);
 	    	        }  
 	    	        return HttpClients.createDefault();  
 	    	    }  

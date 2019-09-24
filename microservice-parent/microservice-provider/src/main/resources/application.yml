@@ -5,7 +5,7 @@ mybatis:
   config-location: "classpath:mybatis/mybatis.cfg.xml"        # mybatis配置文件所在路径
   mapper-locations:
     - "classpath:mybatis/mapper/**/*.xml"                     # mapper映射文件
-  type-aliases-package: com.lzj.springcloud.entity            # 别名类所在包
+  type-aliases-package: com.node3.cn.entity                   # 别名类所在包
 spring:
   application:
     name: microservicecloud-provider                          #微服务的名字
@@ -31,6 +31,6 @@ eureka:
 
 info:
   app.name: microservicecloud-provider
-  company.name: www.lzj.com
+  company.name: www.3node.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$

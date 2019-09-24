@@ -10,8 +10,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
-
 
 /**
  *  
@@ -22,7 +20,7 @@ import org.apache.log4j.Logger;
  *@version V1.0
  */
 public class SnCreateTools { 
-	private static final Logger log = Logger.getLogger(SnCreateTools.class);
+	//private static final Logger log = Logger.getLogger(SnCreateTools.class);
 	
 	//AAA0000001B00GC2B100_E3A2 
 	//600000MU700 D 15BP0 001
@@ -77,8 +75,7 @@ public class SnCreateTools {
 		map_return.put("snEndDecimal", endDecimal);
 		//存数据库 20位的不用存;只保存25位的
 		map_return.put("snList",list18); 
-		log.info("zipFile_relative_path=="+zipFile_relative_path +"====zipFile_absolute_path=="+
-				zipFile_absolute_path+ "===snStart====="+start18+ "==snEnd======"+end18);
+		//log.info("zipFile_relative_path=="+zipFile_relative_path +"====zipFile_absolute_path=="+zipFile_absolute_path+ "===snStart====="+start18+ "==snEnd======"+end18);
 		return map_return;
 		 
 	} 
@@ -87,7 +84,7 @@ public class SnCreateTools {
 	public static Map create(String sn_pre_11, String startSn, int count,String productTime  ){   
 		//生成结束sn  =       
 		Map<String, Object> result = new  HashMap<String, Object>();
-		log.info("snApplyTool-create--sn_pre_11="+sn_pre_11+ "&&startSn="+startSn+ "&&count="+count);
+		//log.info("snApplyTool-create--sn_pre_11="+sn_pre_11+ "&&startSn="+startSn+ "&&count="+count);
 		List<String> list18 = new ArrayList<String>();
 		//List<String> list14 = new ArrayList<String>(); 
 		List<String> list_start_end = new ArrayList<String>(); 
@@ -108,7 +105,7 @@ public class SnCreateTools {
 			String snCode_start18 = snCode_start14+strCRC; 
 			//验证码4个0结尾的 跳过
 			if("0000".equals(strCRC)){
-				log.info("验证码4个0结尾的 跳过:"+snCode_start18);
+				//log.info("验证码4个0结尾的 跳过:"+snCode_start18);
 				++count;
 				continue;
 			} 
@@ -166,7 +163,7 @@ public class SnCreateTools {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        log.info("生成文件ok"); 
+        //log.info("生成文件ok");
 	}
 	 
  

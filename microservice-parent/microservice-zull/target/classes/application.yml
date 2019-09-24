@@ -22,6 +22,6 @@ zuul:
 
 info:
   app.name: microservice-zull
-  company.name: www.lzj.com
+  company.name: www.3node.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$

@@ -19,7 +19,6 @@ import net.sf.json.JSONObject;
 import net.sourceforge.pinyin4j.PinyinHelper;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
 
 /**
  * 
@@ -32,7 +31,7 @@ import org.apache.log4j.Logger;
 public class UtilCommon {
 
 	
-	private static final Logger logger = Logger.getLogger(UtilCommon.class);
+	//private static final Logger logger = Logger.getLogger(UtilCommon.class);
 	  
     private final static String CHARSET_UTF8 = "UTF-8";
     private final static String SEPARATOR_AND = "&";

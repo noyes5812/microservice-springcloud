@@ -3,15 +3,16 @@ package com.node3.cn.controller;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.node3.cn.entity.TbUsers;
 import com.node3.cn.service.TbUsersService;
+import com.node3.cn.web.BaseController;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-public class TbUsersController {
+public class TbUsersController  extends BaseController {
 
-    private Logger logger = Logger.getLogger(getClass());
+    private Logger logger = Logger.getLogger(TbUsersController.class);
     @Autowired
     TbUsersService tbUsersService;
 
@@ -28,10 +29,6 @@ public class TbUsersController {
     @HystrixCommand(fallbackMethod="hystrixGetUser") //一旦服务调用失败，就调用hystrixGetUser方法
     public TbUsers getUser(@PathVariable("id") long id){
         TbUsers user = tbUsersService.selectByPrimaryKey(id);
-
-        logger.debug("getUser==id=="+id);
-
-        System.out.println(user.getNickname());
         if(user==null){
             throw new RuntimeException("不存在id=" + id + "对应的用户信息");
         }
