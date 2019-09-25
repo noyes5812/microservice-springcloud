@@ -14,7 +14,7 @@
         <module>microservice-consumer</module>
         <module>microservice-dashbord</module>
         <module>microservice-zull</module>
-        <module>microservice-admin</module>
+
     </modules>
     <packaging>pom</packaging>
 
