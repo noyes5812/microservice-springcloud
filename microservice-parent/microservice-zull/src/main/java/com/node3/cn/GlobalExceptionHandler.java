@@ -1,4 +1,4 @@
-package com.node3.cn.controller;
+package com.node3.cn;
 
 import com.alibaba.fastjson.JSONObject;
 import com.node3.cn.bean.ErrorEnum;

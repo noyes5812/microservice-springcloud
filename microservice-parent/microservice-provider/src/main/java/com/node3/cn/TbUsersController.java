@@ -1,4 +1,4 @@
-package com.node3.cn.controller;
+package com.node3.cn;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.node3.cn.entity.TbUsers;

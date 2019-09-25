@@ -1,4 +1,4 @@
-package com.node3.cn.controller;
+package com.node3.cn;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

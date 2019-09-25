@@ -11,7 +11,7 @@ spring:
     name: microservicecloud-provider                          #微服务的名字
   datasource:
     driver-class-name: org.gjt.mm.mysql.Driver                # mysql驱动包
-    type: com.alibaba.druid.pool.DruidDataSource              # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource                    # 当前数据源操作类型
     url: "jdbc:mysql://localhost:3306/irs"                    # 数据库名称
     username: root
     password: 123456

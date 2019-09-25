@@ -1,4 +1,4 @@
-package com.node3.cn.controller;
+package com.node3.cn;
 
 import com.node3.cn.entity.TbUsers;
 import com.node3.cn.service.ConsumerService;
